@@ -44,20 +44,14 @@ function App() {
         const contract = new web3.eth.Contract(build.abi, config[chainId].contract_address);
         const s = await contract.methods.totalSupply().call({})
         setSupply(s);
-        console.log('SUPPLY');
         const p = await contract.methods.price().call({});
         setPrice(p);
-        console.log('PRICE');
         const wp = await contract.methods.wlPrice().call({});
         setWlPrice(wp);
-        console.log('WLPRICE');
         const priv = await contract.methods.isPrivate().call({});
         setIsPrivate(priv);
-        console.log('ISPRIVATE');
         const pub = await contract.methods.isPublic().call({});
         setIsPublic(pub);
-        console.log('ISPUBLIC');
-
         // get address
         let address;
         const accounts = await web3.eth.getAccounts();
@@ -67,7 +61,6 @@ function App() {
         const proof = mt.getHexProof(keccak256(address))
         const allowed = await contract.methods.isAllowed(proof, address).call({});
         setIsAllowed(allowed);
-        console.log('ISALLOWED', allowed);
 
         setAccount({
           web3,
@@ -108,7 +101,6 @@ function App() {
     const merkleTree = new MerkleTree(leafNodes, keccak256, {
       sortPairs: true,
     });
-    console.log(merkleTree.getHexRoot())
     return merkleTree;
   }
 
