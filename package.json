@@ -30,7 +30,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://niftycities.xyz",
+  "homepage": "https://mint.wzkd.info",
   "eslintConfig": {
     "extends": [
       "react-app",
