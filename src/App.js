@@ -1,5 +1,5 @@
 import './App.css';
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
 import Web3 from "web3";
 import { useEffect, useState } from 'react';
 import build from "./contracts/WZKD.json";
