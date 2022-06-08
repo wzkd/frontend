@@ -1,0 +1,9 @@
+.navbar {
+    float: right;
+    margin: 36px;
+}
+
+.navbar-item {
+    margin-right: 24px;
+    font-size: 1.5rem;
+}
