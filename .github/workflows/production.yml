@@ -21,4 +21,4 @@ jobs:
           git config --global user.name 'owenyuwono'
           git config --global user.email 'owenyuwono@gmail.com'
       - name: deploy to production
-        run: npm run deploy
+        run: CI=false npm run deploy
