@@ -1,0 +1,24 @@
+name: Production
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v1
+      - name: install dependencies
+        run: npm install
+      - name: git config
+        run: |
+          git remote set-url origin https://owenyuwono:${{ secrets.GITHUB_TOKEN }}@github.com/wzkd/frontend
+          git config --global user.name 'owenyuwono'
+          git config --global user.email 'owenyuwono@gmail.com'
+      - name: deploy to production
+        run: npm run deploy
