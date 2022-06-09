@@ -230,7 +230,7 @@ function App() {
 
   const renderPrivateMint = () => {
     if(!isPrivate) return;
-    if(!isPublic && !isAllowed) return <p className='title-text' style={{marginBottom: '4vh'}}>You are not whitelisted</p>;
+    // if(!isPublic && !isAllowed) return <p className='title-text' style={{marginBottom: '4vh'}}>You are not whitelisted</p>;
     if(isAllowed) {
       return (<div>
         <p className='title-text'>Private Mint</p>
@@ -254,7 +254,7 @@ function App() {
 
   const renderMintingSoon = () => {
     if(isPrivate || isPublic) return;
-    return <p className='title-text' style={{marginBottom: '4vh'}}>Minting Soon</p>;
+    return <p className='title-text' style={{marginBottom: '4vh'}}>Minting Now</p>;
   }
 
   const renderTotalSupply = () => {
