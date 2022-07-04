@@ -259,7 +259,7 @@ function App() {
 
   const renderTotalSupply = () => {
     if(!isPrivate && !isPublic) return;
-    return <p className='supply-text'>{supply}/5678</p>;
+    return <p className='supply-text'>{supply}/4321</p>;
   }
 
   return (
